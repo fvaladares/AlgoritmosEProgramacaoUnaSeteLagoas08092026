@@ -54,6 +54,8 @@ public class Main {
         System.out.println(".:|NF Una|:.");
         System.out.printf("\tValor unitário R$ %.2f\n",
                 valorUnitario);
+        System.out.printf("\tQuantidade de produtos: R$ %d\n",
+                quantidadeProduto);
         System.out.printf("\tValor total da NF sem desconto R$ %.2f\n",
                 valorTotalNF);
         System.out.printf("\tValor do desconto concedido: R$ %.2f\n",
