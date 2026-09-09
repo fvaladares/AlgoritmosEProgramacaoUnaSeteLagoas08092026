@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.util.ConsoleColor;
 import java.util.Scanner;
 
 public class Main {
@@ -20,12 +21,10 @@ public class Main {
         double desconto = 0; // Toda variável deve ser inicializada antes da utilização.
         double valorTotalComDesconto;
         double valorDoDesconto;
-        System.out.println("Programa emissor de NF");
-        System.out.print("Informe o código do produto: ");
+        System.out.println("\n\n");
+        System.out.println(ConsoleColor.BOLD_GREEN +  ".:|Programa emissor de NF|:." + ConsoleColor.RESET);
+        System.out.print("\nInforme o código do produto: ");
         codigoProduto = entrada.nextInt();
-
-        System.out.print("Informe a quantidade do produto: ");
-        quantidadeProduto = entrada.nextInt();
 
         // Estrutura condicional que determina o valor unitário.
         if (codigoProduto >= 1 && codigoProduto <= 10) {
@@ -37,10 +36,17 @@ public class Main {
         } else if (codigoProduto > 30 && codigoProduto <= 40) {
             valorUnitario = 30;
         } else { // Este else impede a execução do código sem que o valor unitário seja inicializado.
-            System.out.println("O valor fornecido é inválido, o programa será encerrado.");
-            System.out.println("Por favor, insira valores entre 1 e 40.");
+            System.out.println("\n\n");
+            System.out.println(ConsoleColor.BOLD_RED + "ERRO!!\n" + ConsoleColor.RESET);
+            System.out.println(ConsoleColor.BLUE + "O valor fornecido é inválido, o programa será encerrado." );
+            System.out.println("Por favor, insira valores entre 1 e 40." + ConsoleColor.RESET);
             return;
         }
+
+
+        System.out.println();
+        System.out.print("Informe a quantidade do produto: ");
+        quantidadeProduto = entrada.nextInt();
 
         valorTotalNF = valorUnitario * quantidadeProduto;
 
