@@ -15,9 +15,9 @@ public class Main {
         Scanner entrada = new Scanner(System.in);
         int codigoProduto;
         int quantidadeProduto;
-        double valorUnitario = 1;
+        double valorUnitario;
         double valorTotalNF;
-        double desconto = 0;
+        double desconto = 0; // Toda variável deve ser inicializada antes da utilização.
         double valorTotalComDesconto;
         double valorDoDesconto;
         System.out.println("Programa emissor de NF");
@@ -36,6 +36,10 @@ public class Main {
             valorUnitario = 20;
         } else if (codigoProduto > 30 && codigoProduto <= 40) {
             valorUnitario = 30;
+        } else { // Este else impede a execução do código sem que o valor unitário seja inicializado.
+            System.out.println("O valor fornecido é inválido, o programa será encerrado.");
+            System.out.println("Por favor, insira valores entre 1 e 40.");
+            return;
         }
 
         valorTotalNF = valorUnitario * quantidadeProduto;
@@ -63,7 +67,7 @@ public class Main {
         System.out.printf("\tValor final da NF (já com desconto): R$ %.2f\n",
                 valorTotalComDesconto);
         System.out.println();
-        System.out.println("Até mais!! \uD83D\uDE01 ❤\uFE0F");
+        System.out.println("Até mais!! \uD83D\uDE01 ❤️");
 
     }
 }
